@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/netflix-gpt/static/css/main.067e871b.css",
+    "main.js": "/netflix-gpt/static/js/main.e0d2efe9.js",
+    "static/js/787.8e11e584.chunk.js": "/netflix-gpt/static/js/787.8e11e584.chunk.js",
+    "index.html": "/netflix-gpt/index.html",
+    "main.067e871b.css.map": "/netflix-gpt/static/css/main.067e871b.css.map",
+    "main.e0d2efe9.js.map": "/netflix-gpt/static/js/main.e0d2efe9.js.map",
+    "787.8e11e584.chunk.js.map": "/netflix-gpt/static/js/787.8e11e584.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.067e871b.css",
+    "static/js/main.e0d2efe9.js"
+  ]
+}
