@@ -28,7 +28,7 @@ const Login = () => {
           className="p-4  mb-3 w-full bg-gray-800 rounded-lg"
         />
         <input type="password" placeholder="password" className="p-4 mb-4 w-full bg-gray-800 rounded-lg" />
-        <button className="p-4 my-6 bg-red-700 w-full rounded-lg">{isSignInForm? "Sign In":"Sign Up"}</button>
+        <button className="p-4 my-6 bg-red-700 w-full rounded-lg" onClick={handleButtonClick}>{isSignInForm? "Sign In":"Sign Up"}</button>
         <p className="py-4">{isSignInForm? "New to Netflix?":"Already a Customer?"}<span className=" cursor-pointer" onClick={toggleSignInForm}> {isSignInForm? "Sign up now.": "Sign in now"}</span></p>
       </form>
     </div>
