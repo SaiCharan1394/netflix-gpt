@@ -2,9 +2,11 @@ import { useState, useRef } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import React from "react";
-import {createUserWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../utils/firebase"
-
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -14,22 +16,37 @@ const Login = () => {
   const handleButtonClick = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
-    if(message) return;
-    if (!isSignInForm){
-      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
-      .then((userCredential) => {
-       
-        const user = userCredential.user;
-        
-
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        setErrorMessage(errorCode+"-"+errorMessage)
-      });
-    }else{
-
+    if (message) return;
+    if (!isSignInForm) {
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+        });
+    } else {
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+        });
     }
   };
   const toggleSignInForm = () => {
